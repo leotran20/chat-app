@@ -14,7 +14,7 @@ const login = () => {
 <template>
   <div class="login">
     <div class="card">
-      <h1>Login</h1>
+      <h1 class="text-red-600">Login</h1>
       <form @submit.prevent="login">
         <label for="username">UserName</label>
         <input type="text" id="username" v-model="username"/>
@@ -23,6 +23,10 @@ const login = () => {
         <input type="password" id="password" v-model="password"/>
 
         <button type="submit">Login</button>
+
+        <div class="flex align-items-center">
+          <a href="#">Forgot password</a>
+        </div>
       </form>
     </div>
 
