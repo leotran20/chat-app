@@ -8,12 +8,17 @@ import Wrapper from '@/components/Wrapper.vue';
 <template>
   <Wrapper>
     <NavBar/>
-    <div>
-      <h1>Home</h1>
+    <div class="main-content height-fit-screen">
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <KeepAlive>
+            <component :is="Component"/>
+          </KeepAlive>
+        </transition>
+      </router-view>
     </div>
   </Wrapper>
 </template>
 
 <style scoped>
-
 </style>

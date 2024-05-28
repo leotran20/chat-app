@@ -1,10 +1,18 @@
 <script setup>
 import NavBar from '@/components/NavBar.vue';
+import Wrapper from '@/components/Wrapper.vue';
 </script>
 
 <template>
   <main>
-    <router-view></router-view>
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component"></component>
+      </transition>
+    </router-view>
+    <router-view v-slot="{ Component }" name="auth">
+      <component :is="Component"></component>
+    </router-view>
   </main>
 </template>
 
